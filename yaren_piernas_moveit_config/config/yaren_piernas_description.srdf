@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="yaren_piernas_description">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="legs_robot_D_controller">
+        <chain base_link="Cadera_Link" tip_link="PieD11_Link"/>
+    </group>
+    <group name="legs_robot_I_controller">
+        <chain base_link="Cadera_Link" tip_link="PieI12_Link"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="zeros_D" group="legs_robot_D_controller">
+        <joint name="CoxisD_Joint" value="0"/>
+        <joint name="MusloD3_Joint" value="0"/>
+        <joint name="MusloD5_Joint" value="0"/>
+        <joint name="PantorrillaD_Joint" value="0"/>
+        <joint name="PieD11_Joint" value="0"/>
+        <joint name="PieD9_Joint" value="0"/>
+    </group_state>
+    <group_state name="zeros_I" group="legs_robot_I_controller">
+        <joint name="CoxisI_Joint" value="0"/>
+        <joint name="MusloI4_Joint" value="0"/>
+        <joint name="MusloI6_Joint" value="0"/>
+        <joint name="PantorrillaI_Joint" value="0"/>
+        <joint name="PieI10_Joint" value="0"/>
+        <joint name="PieI12_Joint" value="0"/>
+    </group_state>
+    <group_state name="home_D" group="legs_robot_D_controller">
+        <joint name="CoxisD_Joint" value="0.25"/>
+        <joint name="MusloD3_Joint" value="0"/>
+        <joint name="MusloD5_Joint" value="0"/>
+        <joint name="PantorrillaD_Joint" value="-0.6"/>
+        <joint name="PieD11_Joint" value="0"/>
+        <joint name="PieD9_Joint" value="0.35"/>
+    </group_state>
+    <group_state name="home_D" group="legs_robot_I_controller">
+        <joint name="CoxisI_Joint" value="-0.25"/>
+        <joint name="MusloI4_Joint" value="0"/>
+        <joint name="MusloI6_Joint" value="0"/>
+        <joint name="PantorrillaI_Joint" value="0.6"/>
+        <joint name="PieI10_Joint" value="-0.3"/>
+        <joint name="PieI12_Joint" value="0"/>
+    </group_state>
+    <group_state name="forward_I" group="legs_robot_I_controller">
+        <joint name="CoxisI_Joint" value="-0.3"/>
+        <joint name="MusloI4_Joint" value="0"/>
+        <joint name="MusloI6_Joint" value="0"/>
+        <joint name="PantorrillaI_Joint" value="0.7"/>
+        <joint name="PieI10_Joint" value="-0.4"/>
+        <joint name="PieI12_Joint" value="0"/>
+    </group_state>
+    <group_state name="forward_D" group="legs_robot_D_controller">
+        <joint name="CoxisD_Joint" value="0.3"/>
+        <joint name="MusloD3_Joint" value="0"/>
+        <joint name="MusloD5_Joint" value="0"/>
+        <joint name="PantorrillaD_Joint" value="-0.7"/>
+        <joint name="PieD11_Joint" value="0"/>
+        <joint name="PieD9_Joint" value="0.4"/>
+    </group_state>
+    <group_state name="forward2_I" group="legs_robot_I_controller">
+        <joint name="CoxisI_Joint" value="-0.2"/>
+        <joint name="MusloI4_Joint" value="0"/>
+        <joint name="MusloI6_Joint" value="0"/>
+        <joint name="PantorrillaI_Joint" value="0.4"/>
+        <joint name="PieI10_Joint" value="-0.2"/>
+        <joint name="PieI12_Joint" value="0"/>
+    </group_state>
+    <group_state name="forward2_D" group="legs_robot_D_controller">
+        <joint name="CoxisD_Joint" value="0.2"/>
+        <joint name="MusloD3_Joint" value="0"/>
+        <joint name="MusloD5_Joint" value="0"/>
+        <joint name="PantorrillaD_Joint" value="-0.4"/>
+        <joint name="PieD11_Joint" value="0"/>
+        <joint name="PieD9_Joint" value="0.2"/>
+    </group_state>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="base_joint" type="fixed" parent_frame="world" child_link="Cadera_Link"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="Cadera_Link" link2="CoxisD_Link" reason="Adjacent"/>
+    <disable_collisions link1="Cadera_Link" link2="CoxisI_Link" reason="Adjacent"/>
+    <disable_collisions link1="CoxisD_Link" link2="CoxisI_Link" reason="Never"/>
+    <disable_collisions link1="CoxisD_Link" link2="MusloD3_Link" reason="Adjacent"/>
+    <disable_collisions link1="CoxisD_Link" link2="MusloI4_Link" reason="Never"/>
+    <disable_collisions link1="CoxisD_Link" link2="MusloI6_Link" reason="Never"/>
+    <disable_collisions link1="CoxisD_Link" link2="PantorrillaD_Link" reason="Never"/>
+    <disable_collisions link1="CoxisD_Link" link2="PieD11_Link" reason="Never"/>
+    <disable_collisions link1="CoxisD_Link" link2="PieD9_Link" reason="Never"/>
+    <disable_collisions link1="CoxisD_Link" link2="PieI10_Link" reason="Never"/>
+    <disable_collisions link1="CoxisI_Link" link2="MusloD3_Link" reason="Never"/>
+    <disable_collisions link1="CoxisI_Link" link2="MusloD5_Link" reason="Never"/>
+    <disable_collisions link1="CoxisI_Link" link2="MusloI4_Link" reason="Adjacent"/>
+    <disable_collisions link1="CoxisI_Link" link2="PantorrillaI_Link" reason="Never"/>
+    <disable_collisions link1="CoxisI_Link" link2="PieI10_Link" reason="Never"/>
+    <disable_collisions link1="CoxisI_Link" link2="PieI12_Link" reason="Never"/>
+    <disable_collisions link1="MusloD3_Link" link2="MusloD5_Link" reason="Adjacent"/>
+    <disable_collisions link1="MusloD3_Link" link2="MusloI4_Link" reason="Never"/>
+    <disable_collisions link1="MusloD3_Link" link2="MusloI6_Link" reason="Never"/>
+    <disable_collisions link1="MusloD3_Link" link2="PantorrillaD_Link" reason="Never"/>
+    <disable_collisions link1="MusloD3_Link" link2="PieD11_Link" reason="Never"/>
+    <disable_collisions link1="MusloD3_Link" link2="PieD9_Link" reason="Never"/>
+    <disable_collisions link1="MusloD5_Link" link2="MusloI4_Link" reason="Never"/>
+    <disable_collisions link1="MusloD5_Link" link2="PantorrillaD_Link" reason="Adjacent"/>
+    <disable_collisions link1="MusloD5_Link" link2="PieD11_Link" reason="Never"/>
+    <disable_collisions link1="MusloD5_Link" link2="PieD9_Link" reason="Never"/>
+    <disable_collisions link1="MusloI4_Link" link2="MusloI6_Link" reason="Adjacent"/>
+    <disable_collisions link1="MusloI4_Link" link2="PantorrillaI_Link" reason="Never"/>
+    <disable_collisions link1="MusloI4_Link" link2="PieI10_Link" reason="Never"/>
+    <disable_collisions link1="MusloI4_Link" link2="PieI12_Link" reason="Never"/>
+    <disable_collisions link1="MusloI6_Link" link2="PantorrillaI_Link" reason="Adjacent"/>
+    <disable_collisions link1="MusloI6_Link" link2="PieI10_Link" reason="Never"/>
+    <disable_collisions link1="MusloI6_Link" link2="PieI12_Link" reason="Never"/>
+    <disable_collisions link1="PantorrillaD_Link" link2="PieD9_Link" reason="Adjacent"/>
+    <disable_collisions link1="PantorrillaI_Link" link2="PieI10_Link" reason="Adjacent"/>
+    <disable_collisions link1="PieD11_Link" link2="PieD9_Link" reason="Adjacent"/>
+    <disable_collisions link1="PieI10_Link" link2="PieI12_Link" reason="Adjacent"/>
+</robot>

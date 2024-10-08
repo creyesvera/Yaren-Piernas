@@ -1,0 +1,23 @@
+controller_list:
+  - name: legs_robot_D_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - CoxisD_Joint
+      - MusloD3_Joint
+      - MusloD5_Joint
+      - PantorrillaD_Joint
+      - PieD9_Joint
+      - PieD11_Joint
+  - name: legs_robot_I_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - CoxisI_Joint
+      - MusloI4_Joint
+      - MusloI6_Joint
+      - PantorrillaI_Joint
+      - PieI10_Joint
+      - PieI12_Joint

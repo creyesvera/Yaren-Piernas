@@ -1,0 +1,24 @@
+controller_list:
+  - name: fake_legs_robot_D_controller_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - CoxisD_Joint
+      - MusloD3_Joint
+      - MusloD5_Joint
+      - PantorrillaD_Joint
+      - PieD9_Joint
+      - PieD11_Joint
+  - name: fake_legs_robot_I_controller_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - CoxisI_Joint
+      - MusloI4_Joint
+      - MusloI6_Joint
+      - PantorrillaI_Joint
+      - PieI10_Joint
+      - PieI12_Joint
+initial:  # Define initial robot poses per group
+  - group: legs_robot_D_controller
+    pose: zeros_D
+  - group: legs_robot_I_controller
+    pose: zeros_I

@@ -1,0 +1,21 @@
+##Para el nodo_python##
+
+    chmod +x nodo_rospy.py
+
+# chmod +x [node_name] sirve para activar el archivo py#
+
+    ./nodo_rospy.py
+
+##Para el nodo_rospy##
+
+
+    chmod +x nodo_rospy.py
+
+#otro terminal:#
+
+    roscore
+
+#primer terminal#
+#rosrun [package_name] [node_name]
+
+    rosrun yaren_piernas_comunication nodo_rospy.py

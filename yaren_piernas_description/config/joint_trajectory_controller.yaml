@@ -1,0 +1,15 @@
+#Instead of using TAB for indentation, use two spaces at the place of one TAB
+#Controller to control robot arm joints
+legs_robot_D_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints: ['CoxisD_Joint', 'MusloD3_Joint', 'MusloD5_Joint', 'PantorrillaD_Joint', 'PieD9_Joint', 'PieD11_Joint' ]
+
+legs_robot_I_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints: ['CoxisI_Joint', 'MusloI4_Joint', 'MusloI6_Joint', 'PantorrillaI_Joint', 'PieI10_Joint', 'PieI12_Joint' ]
+
+#Controller to continuously publish joint states/positions
+joint_state_controller:
+  type: "joint_state_controller/JointStateController"
+  publish_rate: 50
+  

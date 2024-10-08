@@ -1,0 +1,6 @@
+roscore
+
+catkin_make
+source devel/setup.bash
+
+roslaunch yaren_piernas_moveit_config full_yaren_piernas_sim.launch

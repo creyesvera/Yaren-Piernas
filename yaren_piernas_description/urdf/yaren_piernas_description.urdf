@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="yaren_piernas_description">
+
+    <link name="world"/>
+  <joint name="base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="Cadera_Link"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.4898"/>
+  </joint>
+  
+
+  <link
+    name="Cadera_Link">
+    <inertial>
+      <origin
+        xyz="0.000147220163644643 2.81723410493935E-05 -0.0298863666172589"
+        rpy="0 0 0" />
+      <mass
+        value="0.942742581114654" />
+      <inertia
+        ixx="0.000752860371163261"
+        ixy="-0.000301098625559866"
+        ixz="-4.76860148301685E-05"
+        iyy="0.00997216018478389"
+        iyz="-6.80815025919595E-06"
+        izz="0.00991782478384419" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/Cadera_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/Cadera_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="CoxisD_Link">
+    <inertial>
+      <origin
+        xyz="7.06616756915128E-05 -0.0165605584855214 0.0235614383856656"
+        rpy="0 0 0" />
+      <mass
+        value="0.020745117471123" />
+      <inertia
+        ixx="9.87819426130832E-06"
+        ixy="-3.35539796450778E-08"
+        ixz="8.94332240963538E-09"
+        iyy="1.02005470755493E-05"
+        iyz="-1.60622227575972E-07"
+        izz="5.84460352065781E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/CoxisD_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/CoxisD_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CoxisD_Joint"
+    type="revolute">
+    <origin
+      xyz="0.095821 0.0014123 -0.065951"
+      rpy="1.5703 -0.0087263 1.5795" />
+    <parent
+      link="Cadera_Link" />
+    <child
+      link="CoxisD_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="1.4"
+      velocity="52" />
+  </joint>
+  <link
+    name="MusloD3_Link">
+    <inertial>
+      <origin
+        xyz="0.000495972032252035 -0.0119998480135103 -0.0204201722301685"
+        rpy="0 0 0" />
+      <mass
+        value="0.0569176381843203" />
+      <inertia
+        ixx="1.43924904775921E-05"
+        ixy="5.82484847066538E-10"
+        ixz="3.44003471185179E-07"
+        iyy="1.02302747980035E-05"
+        iyz="-7.69930496565516E-10"
+        izz="1.43925067823277E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/MusloD3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.411764705882353 0.411764705882353 0.411764705882353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/MusloD3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MusloD3_Joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.026584 0.015243"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="CoxisD_Link" />
+    <child
+      link="MusloD3_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="1.3"
+      velocity="48" />
+  </joint>
+  <link
+    name="MusloD5_Link">
+    <inertial>
+      <origin
+        xyz="0.000389974867522791 -0.0976144542672702 -0.00161346078186912"
+        rpy="0 0 0" />
+      <mass
+        value="0.212552658837267" />
+      <inertia
+        ixx="0.000403358560814503"
+        ixy="1.31484667679828E-05"
+        ixz="7.03124032688756E-08"
+        iyy="0.000153020163152075"
+        iyz="1.32795884866211E-05"
+        izz="0.000400324720608625" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/MusloD5_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/MusloD5_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MusloD5_Joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.024 -0.020916"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="MusloD3_Link" />
+    <child
+      link="MusloD5_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="PantorrillaD_Link">
+    <inertial>
+      <origin
+        xyz="-0.00482647018269064 -0.0562403913141357 0.00386549565439919"
+        rpy="0 0 0" />
+      <mass
+        value="0.163713939167031" />
+      <inertia
+        ixx="0.00036452470644528"
+        ixy="7.86058464624135E-06"
+        ixz="-9.86446851178317E-07"
+        iyy="0.000125485126362854"
+        iyz="-4.68758515239534E-05"
+        izz="0.00037029873208801" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/PantorrillaD_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/PantorrillaD_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="PantorrillaD_Joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.16792 -0.0013969"
+      rpy="0 0 0" />
+    <parent
+      link="MusloD5_Link" />
+    <child
+      link="PantorrillaD_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="1.4"
+      velocity="52" />
+  </joint>
+  <link
+    name="PieD9_Link">
+    <inertial>
+      <origin
+        xyz="0.000495971902237935 0.012000150511161 0.000495879048170524"
+        rpy="0 0 0" />
+      <mass
+        value="0.0569176443370124" />
+      <inertia
+        ixx="1.43924905065838E-05"
+        ixy="5.82506484645811E-10"
+        ixz="3.44003433595949E-07"
+        iyy="1.02302750008338E-05"
+        iyz="-7.69914039215513E-10"
+        izz="1.4392507011912E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/PieD9_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.411764705882353 0.411764705882353 0.411764705882353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/PieD9_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="PieD9_Joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.15 0"
+      rpy="0 0 -3.1416" />
+    <parent
+      link="PantorrillaD_Link" />
+    <child
+      link="PieD9_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="1.3"
+      velocity="48" />
+  </joint>
+  <link
+    name="PieD11_Link">
+    <inertial>
+      <origin
+        xyz="-0.000422712960562122 -0.0156802924901077 0.0292534404711574"
+        rpy="0 0 0" />
+      <mass
+        value="0.439542856963236" />
+      <inertia
+        ixx="0.000802752305127522"
+        ixy="-9.12172106427626E-07"
+        ixz="5.96615727061781E-06"
+        iyy="0.00105401701329437"
+        iyz="2.05798856437754E-06"
+        izz="0.000369174716621098" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/PieD11_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/PieD11_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="PieD11_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.024 0"
+      rpy="0 0 -3.1416" />
+    <parent
+      link="PieD9_Link" />
+    <child
+      link="PieD11_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="CoxisI_Link">
+    <inertial>
+      <origin
+        xyz="7.06620759330576E-05 -0.0165605586791962 -0.0235614391914631"
+        rpy="0 0 0" />
+      <mass
+        value="0.0207451185588264" />
+      <inertia
+        ixx="9.87819455778111E-06"
+        ixy="-3.35539517916912E-08"
+        ixz="-8.94319852493181E-09"
+        iyy="1.0200547267101E-05"
+        iyz="1.60622152918934E-07"
+        izz="5.84460346807627E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/CoxisI_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/CoxisI_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CoxisI_Joint"
+    type="revolute">
+    <origin
+      xyz="-0.095767 -0.00025996 -0.066044"
+      rpy="1.5703 -0.0087263 1.5795" />
+    <parent
+      link="Cadera_Link" />
+    <child
+      link="CoxisI_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="1.4"
+      velocity="52" />
+  </joint>
+  <link
+    name="MusloI4_Link">
+    <inertial>
+      <origin
+        xyz="0.000495972500790639 -0.0119998502936846 -0.0204201723479899"
+        rpy="0 0 0" />
+      <mass
+        value="0.0569176377460287" />
+      <inertia
+        ixx="1.43924903948573E-05"
+        ixy="5.82441638587003E-10"
+        ixz="3.44003418695943E-07"
+        iyy="1.02302748165613E-05"
+        iyz="-7.69904102685343E-10"
+        izz="1.43925069403968E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/MusloI4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.411764705882353 0.411764705882353 0.411764705882353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/MusloI4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MusloI4_Joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.026584 -0.015243"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="CoxisI_Link" />
+    <child
+      link="MusloI4_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="1.3"
+      velocity="48" />
+  </joint>
+  <link
+    name="MusloI6_Link">
+    <inertial>
+      <origin
+        xyz="0.000388513761481024 -0.0976126890354434 0.0016175608185564"
+        rpy="0 0 0" />
+      <mass
+        value="0.212545275432212" />
+      <inertia
+        ixx="0.000403280561490835"
+        ixy="1.31582949252143E-05"
+        ixz="-7.29964570203565E-08"
+        iyy="0.000152996296643423"
+        iyz="-1.31999773834732E-05"
+        izz="0.000400227126956471" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/MusloI6_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/MusloI6_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MusloI6_Joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.024 -0.020916"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="MusloI4_Link" />
+    <child
+      link="MusloI6_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="PantorrillaI_Link">
+    <inertial>
+      <origin
+        xyz="-0.00485726889260676 -0.0562401866800502 -0.00386571005705665"
+        rpy="0 0 0" />
+      <mass
+        value="0.163718726195497" />
+      <inertia
+        ixx="0.000364542817391779"
+        ixy="7.36103686600058E-06"
+        ixz="1.0257745411306E-06"
+        iyy="0.000125438373495277"
+        iyz="4.68794779538048E-05"
+        izz="0.000370268084855737" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/PantorrillaI_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/PantorrillaI_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="PantorrillaI_Joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.16792 0.0013969"
+      rpy="0 0 0" />
+    <parent
+      link="MusloI6_Link" />
+    <child
+      link="PantorrillaI_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="1.4"
+      velocity="52" />
+  </joint>
+  <link
+    name="PieI10_Link">
+    <inertial>
+      <origin
+        xyz="0.00049597135205387 0.0120001505111654 0.000495879048174521"
+        rpy="0 0 0" />
+      <mass
+        value="0.0569176443370131" />
+      <inertia
+        ixx="1.43924905065839E-05"
+        ixy="5.82506484649108E-10"
+        ixz="3.44003433595916E-07"
+        iyy="1.02302750008338E-05"
+        iyz="-7.69914039197434E-10"
+        izz="1.4392507011912E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/PieI10_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.411764705882353 0.411764705882353 0.411764705882353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/PieI10_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="PieI10_Joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.15 0"
+      rpy="-3.1416 0 0" />
+    <parent
+      link="PantorrillaI_Link" />
+    <child
+      link="PieI10_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="1.3"
+      velocity="48" />
+  </joint>
+  <link
+    name="PieI12_Link">
+    <inertial>
+      <origin
+        xyz="-0.00042182146546893 -0.0156812519368836 -0.0292581619055721"
+        rpy="0 0 0" />
+      <mass
+        value="0.439563644315815" />
+      <inertia
+        ixx="0.00080293029988846"
+        ixy="-9.22336803083527E-07"
+        ixz="-5.98635198322593E-06"
+        iyy="0.00105415319919723"
+        iyz="-2.0657167582179E-06"
+        izz="0.000369123991830388" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/PieI12_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaren_piernas_description/meshes/PieI12_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="PieI12_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.024 0"
+      rpy="-3.1416 0 0" />
+    <parent
+      link="PieI10_Link" />
+    <child
+      link="PieI12_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <transmission name="CoxisD_Link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="CoxisD_Joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="CoxisD_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="MusloD3_Link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="MusloD3_Joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="MusloD3_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="MusloD5_Link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="MusloD5_Joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="MusloD5_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="PantorrillaD_Link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="PantorrillaD_Joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="PantorrillaD_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="PieD9_Link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="PieD9_Joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="PieD9_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="PieD11_Link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="PieD11_Joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="PieD11_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="CoxisI_Link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="CoxisI_Joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="CoxisI_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="MusloI4_Link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="MusloI4_Joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="MusloI4_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="MusloI6_Link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="MusloI6_Joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="MusloI6_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="PantorrillaI_Link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="PantorrillaI_Joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="PantorrillaI_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="PieI10_Link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="PieI10_Joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="PieI10_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="PieI12_Link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="PieI12_Joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="PieI12_motor">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo>
+    <plugin name="control"
+    filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+  <gazebo reference="CoxisD_Link">
+	<selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="MusloD3_Link">
+	<selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="MusloD5_Link">
+	<selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="PantorrillaD_Link">
+	<selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="PieD9_Link">
+	<selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="PieD11_Link">
+	<selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="CoxisI_Link">
+	<selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="MusloI4_Link">
+	<selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="MusloI6_Link">
+	<selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="PantorrillaI_Link">
+	<selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="PieI10_Link">
+	<selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="PieI12_Link">
+	<selfCollide>true</selfCollide>
+  </gazebo>
+</robot>
